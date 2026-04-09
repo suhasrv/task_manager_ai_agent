@@ -39,7 +39,7 @@ Built with **FastAPI**, **Streamlit**, **LangChain**, **Supabase**, and **Chroma
 
 ---
 
-## 🛠️ **Installation**
+##  **Installation**
 
 ### **1. Clone Repository**
 
@@ -145,7 +145,7 @@ Frontend → **[http://localhost:8501](http://localhost:8501)**
 
 ---
 
-## 📖 **Usage**
+##  **Usage**
 
 ### **AI Agent — Example Commands**
 
