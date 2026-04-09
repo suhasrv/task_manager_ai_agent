@@ -2,7 +2,7 @@
 
 An intelligent task management system powered by AI, featuring natural language task creation, semantic search, and automated reminders. Built with FastAPI, Streamlit, LangChain, Supabase, and ChromaDB.
 
-## 🚀 Features
+## Features
 
 ### Core Functionality
 - **AI-Powered Task Management**: Create, update, and manage tasks using natural language
@@ -23,14 +23,14 @@ An intelligent task management system powered by AI, featuring natural language 
 - **Calendar View**: Visual calendar representation of tasks
 - **AI Agent Chat Interface**: Natural language interaction for task management
 
-## 📋 Prerequisites
+## Prerequisites
 
 - Python 3.10 or higher
 - Supabase account (for database)
 - OpenAI API key (for AI agent functionality)
 - (Optional) Anthropic API key (for Claude models)
 
-## 🛠️ Installation
+## Installation
 
 ### 1. Clone the Repository
 
@@ -108,7 +108,7 @@ API_URL=http://localhost:8000/api/v1
    - `reminders` - Task reminders (use `setup_reminders_table.sql` for quick setup)
    - `calendar_events` - Calendar integration (optional)
 
-## 🚀 Running the Application
+##  Running the Application
 
 ### Start Backend Server
 
@@ -143,7 +143,7 @@ streamlit run frontend/app.py --server.port 8501
 
 The frontend will be available at: **http://localhost:8501**
 
-## 📖 Usage
+##  Usage
 
 ### AI Agent Chat
 
@@ -176,7 +176,7 @@ The AI agent can understand natural language commands:
 3. **Task List**: Browse, filter, and search all tasks
 4. **Calendar View**: See tasks in a calendar format
 
-## 🏗️ Project Structure
+##  Project Structure
 
 ```
 Suhas_projects/
@@ -215,7 +215,7 @@ Suhas_projects/
 └── README.md                # This file
 ```
 
-## 🔌 API Endpoints
+##  API Endpoints
 
 ### Task Management
 - `POST /api/v1/tasks` - Create a new task
@@ -232,7 +232,7 @@ Suhas_projects/
 ### Search
 - `GET /api/v1/search?q={query}` - Semantic search for tasks
 
-## 🧪 Testing
+## Testing
 
 Test scripts are available in the root directory:
 - `test_backend.py` - Backend functionality tests
@@ -247,7 +247,7 @@ python test_backend.py
 python test_api.py
 ```
 
-## 🔧 Configuration
+## Configuration
 
 ### Environment Variables
 
@@ -267,7 +267,7 @@ The system uses:
 
 Ensure both are properly configured in your `.env` file.
 
-## 🐛 Troubleshooting
+##  Troubleshooting
 
 ### Common Issues
 
@@ -293,22 +293,22 @@ Ensure both are properly configured in your `.env` file.
 
 Visit http://localhost:8000/docs to verify the API is running.
 
-## 📝 License
+##  License
 
 This project is part of an AI Agent Development Challenge.
 
-## 🤝 Contributing
+##  Contributing
 
 This is a development project. Contributions and improvements are welcome!
 
-## 📞 Support
+##  Support
 
 For issues or questions:
 1. Check the troubleshooting section
 2. Review API documentation at `/docs` endpoint
 3. Check backend logs for detailed error messages
 
-## 🎯 Future Enhancements
+##  Future Enhancements
 
 - [ ] Google Calendar integration
 - [ ] Notion integration
@@ -322,5 +322,6 @@ For issues or questions:
 
 **Built with ❤️ using FastAPI, Streamlit, LangChain, Supabase, and ChromaDB**
 
-#   t a s k _ m a n a g e r _ a i  
+#   t a s k _ m a n a g e r _ a i 
+ 
  
