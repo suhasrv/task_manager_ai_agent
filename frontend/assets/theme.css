@@ -1,0 +1,388 @@
+/* ============================================================================
+   Task Manager Agent - ui-ux-pro-max Design System Engine (Modern Dark Glassmorphic)
+   ============================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+:root {
+  /* Surfaces & Background */
+  --bg-primary: #0A0F1D;
+  --bg-secondary: #0F172A;
+  --bg-surface: rgba(17, 24, 39, 0.75);
+  --bg-surface-hover: rgba(30, 41, 59, 0.85);
+  --bg-card: rgba(15, 23, 42, 0.7);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-active: rgba(13, 148, 136, 0.5);
+
+  /* Brand Accents */
+  --color-primary: #0D9488;
+  --color-primary-glow: #14B8A6;
+  --color-secondary: #6366F1;
+  --color-accent: #EA580C;
+
+  /* Semantic Status Colors */
+  --status-pending: #94A3B8;
+  --status-inprogress: #38BDF8;
+  --status-completed: #10B981;
+  --status-urgent: #F43F5E;
+  --status-high: #F59E0B;
+  --status-medium: #0D9488;
+  --status-low: #64748B;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+}
+
+/* Global resets & typography */
+html, body, [class*="css"] {
+  font-family: var(--font-sans) !important;
+  color: var(--text-primary) !important;
+}
+
+.stApp {
+  background-color: var(--bg-primary) !important;
+  background-image: 
+    radial-gradient(circle at 10% 15%, rgba(13, 148, 136, 0.08) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.07) 0%, transparent 40%) !important;
+  background-attachment: fixed !important;
+}
+
+/* Sidebar styling */
+section[data-testid="stSidebar"] {
+  background-color: rgba(11, 16, 31, 0.95) !important;
+  border-right: 1px solid var(--border-subtle) !important;
+  backdrop-filter: blur(16px) !important;
+}
+
+section[data-testid="stSidebar"] .block-container {
+  padding-top: 1.5rem !important;
+}
+
+/* ============================================================================
+   Compact Header & AppToolbar Override (ui-ux-pro-max sleek header)
+   ============================================================================ */
+div.stAppToolbar,
+[data-testid="stAppToolbar"],
+.st-emotion-cache-14vh5up,
+.e3g0k5y2 {
+  height: 26px !important;
+  min-height: 26px !important;
+  max-height: 28px !important;
+  padding: 0 0.5rem !important;
+  background: transparent !important;
+  transform: scale(0.85);
+  transform-origin: top right;
+  opacity: 0.65;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+div.stAppToolbar:hover,
+[data-testid="stAppToolbar"]:hover,
+.st-emotion-cache-14vh5up:hover {
+  opacity: 1 !important;
+  transform: scale(0.95);
+}
+
+header[data-testid="stHeader"] {
+  height: 2.2rem !important;
+  min-height: 2.2rem !important;
+  background: transparent !important;
+  border-bottom: none !important;
+}
+
+/* Reduce top whitespace in main container */
+.main .block-container {
+  padding-top: 2rem !important;
+  padding-bottom: 3rem !important;
+}
+
+/* Glassmorphic Container */
+.glass-panel {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  backdrop-filter: blur(16px);
+  border-radius: 14px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.35);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-panel:hover {
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+/* Stat KPI Cards */
+.stat-card {
+  background: linear-gradient(135deg, rgba(20, 27, 45, 0.8) 0%, rgba(15, 23, 42, 0.6) 100%);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  margin-bottom: 1rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+  border-color: rgba(20, 184, 166, 0.3);
+}
+
+.stat-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+}
+
+.stat-card.total::before { background: #38BDF8; }
+.stat-card.pending::before { background: #F59E0B; }
+.stat-card.inprogress::before { background: #6366F1; }
+.stat-card.completed::before { background: #10B981; }
+.stat-card.urgent::before { background: #F43F5E; }
+
+.stat-number {
+  font-size: 2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  margin-top: 0.25rem;
+}
+
+.stat-label {
+  font-size: 0.825rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--text-secondary);
+}
+
+/* Task Item Card */
+.task-item-card {
+  background: rgba(18, 25, 42, 0.85);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-bottom: 0.85rem;
+  backdrop-filter: blur(12px);
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+.task-item-card:hover {
+  border-color: rgba(255, 255, 255, 0.16);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.task-item-card.task-selected {
+  border-color: #2DD4BF !important;
+  box-shadow: 0 0 16px rgba(20, 184, 166, 0.35) !important;
+  background: rgba(18, 38, 58, 0.9) !important;
+}
+
+/* Priority Badges */
+.badge-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  border-radius: 9999px;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-right: 0.4rem;
+}
+
+.badge-urgent {
+  background: rgba(244, 63, 94, 0.15);
+  color: #FB7185;
+  border: 1px solid rgba(244, 63, 94, 0.3);
+}
+
+.badge-high {
+  background: rgba(245, 158, 11, 0.15);
+  color: #FBBF24;
+  border: 1px solid rgba(245, 158, 11, 0.3);
+}
+
+.badge-medium {
+  background: rgba(13, 148, 136, 0.15);
+  color: #2DD4BF;
+  border: 1px solid rgba(13, 148, 136, 0.3);
+}
+
+.badge-low {
+  background: rgba(100, 116, 139, 0.15);
+  color: #94A3B8;
+  border: 1px solid rgba(100, 116, 139, 0.3);
+}
+
+/* Status Badges */
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 6px;
+}
+
+.status-pending { background: rgba(148, 163, 184, 0.15); color: #CBD5E1; }
+.status-in_progress { background: rgba(56, 189, 248, 0.15); color: #38BDF8; }
+.status-completed { background: rgba(16, 185, 129, 0.15); color: #34D399; }
+.status-archived { background: rgba(71, 85, 105, 0.2); color: #94A3B8; }
+
+/* Tag chips */
+.tag-chip {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  color: var(--text-secondary);
+  font-size: 0.75rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+  margin-right: 0.3rem;
+  margin-top: 0.3rem;
+}
+
+/* Agent Pill Banner */
+.agent-banner {
+  background: linear-gradient(90deg, rgba(13, 148, 136, 0.15) 0%, rgba(99, 102, 241, 0.15) 100%);
+  border: 1px solid rgba(20, 184, 166, 0.25);
+  border-radius: 12px;
+  padding: 0.85rem 1.25rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Monospace ID tag */
+.mono-id {
+  font-family: var(--font-mono) !important;
+  font-size: 0.75rem;
+  background: rgba(0, 0, 0, 0.35);
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  color: #38BDF8;
+  border: 1px solid rgba(56, 189, 248, 0.2);
+}
+
+/* Progress bar container */
+.custom-progress-bg {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-top: 0.5rem;
+}
+
+.custom-progress-fill {
+  height: 100%;
+  border-radius: 9999px;
+  background: linear-gradient(90deg, #0D9488 0%, #10B981 100%);
+  transition: width 0.4s ease;
+}
+
+/* Streamlit button overrides */
+div.stButton > button {
+  background: linear-gradient(135deg, rgba(25, 33, 56, 0.8) 0%, rgba(17, 24, 39, 0.8) 100%) !important;
+  border: 1px solid var(--border-subtle) !important;
+  color: var(--text-primary) !important;
+  border-radius: 8px !important;
+  font-weight: 600 !important;
+  padding: 0.45rem 1rem !important;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+div.stButton > button:hover {
+  background: linear-gradient(135deg, rgba(30, 41, 69, 0.9) 0%, rgba(20, 27, 45, 0.9) 100%) !important;
+  border-color: var(--color-primary-glow) !important;
+  box-shadow: 0 4px 14px rgba(13, 148, 136, 0.2) !important;
+  transform: translateY(-1px) !important;
+}
+
+div.stButton > button[type="primary"] {
+  background: linear-gradient(135deg, #0D9488 0%, #0F766E 100%) !important;
+  border: 1px solid rgba(20, 184, 166, 0.4) !important;
+  color: #FFFFFF !important;
+}
+
+div.stButton > button[type="primary"]:hover {
+  background: linear-gradient(135deg, #14B8A6 0%, #0D9488 100%) !important;
+  box-shadow: 0 4px 16px rgba(20, 184, 166, 0.35) !important;
+}
+
+/* Chat bubble styling - Enforce Pure White Text */
+[data-testid="stChatMessage"] {
+  background: rgba(17, 24, 39, 0.75) !important;
+  border: 1px solid var(--border-subtle) !important;
+  border-radius: 14px !important;
+  padding: 1rem !important;
+  margin-bottom: 0.75rem !important;
+  color: #FFFFFF !important;
+}
+
+[data-testid="stChatMessage"] *,
+[data-testid="stChatMessage"] p,
+[data-testid="stChatMessage"] span,
+[data-testid="stChatMessage"] div,
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] p,
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] li,
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] span {
+  color: #FFFFFF !important;
+}
+
+[data-testid="stChatMessage"] [data-testid="stMarkdownContainer"] strong {
+  color: #2DD4BF !important;
+}
+
+[data-testid="stChatMessage"] code {
+  color: #38BDF8 !important;
+  background: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Sidebar Radio Navigation & Labels - Enforce Crisp White Text */
+section[data-testid="stSidebar"] [data-testid="stRadio"] label,
+section[data-testid="stSidebar"] [data-testid="stRadio"] label *,
+section[data-testid="stSidebar"] [data-testid="stRadio"] label div,
+section[data-testid="stSidebar"] [data-testid="stRadio"] label div p,
+section[data-testid="stSidebar"] [data-testid="stRadio"] label span,
+div[data-testid="stRadio"] label,
+div[data-testid="stRadio"] label * {
+  color: #FFFFFF !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+}
+
+section[data-testid="stSidebar"] [data-testid="stRadio"] label:hover div p,
+section[data-testid="stSidebar"] [data-testid="stRadio"] label:hover span {
+  color: #2DD4BF !important;
+}
+
+/* General Markdown & Text Overrides */
+[data-testid="stMarkdownContainer"] p {
+  color: #F8FAFC !important;
+}
+
+/* Chat Input field text styling */
+[data-testid="stChatInput"] textarea {
+  color: #FFFFFF !important;
+  background-color: rgba(15, 23, 42, 0.8) !important;
+  border: 1px solid var(--border-subtle) !important;
+}
+
+[data-testid="stChatInput"] textarea::placeholder {
+  color: #94A3B8 !important;
+}
+

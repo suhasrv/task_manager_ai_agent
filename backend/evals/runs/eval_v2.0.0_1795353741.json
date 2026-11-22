@@ -1,0 +1,103 @@
+{
+  "timestamp": "2026-11-22T18:52:21.692954",
+  "prompt_version": "v2.0.0",
+  "total_cases": 5,
+  "tool_accuracy_pct": 100.0,
+  "task_success_rate_pct": 100.0,
+  "average_latency_sec": 8.63,
+  "category_breakdown": {
+    "task_creation": {
+      "count": 5,
+      "tool_hits": 5.0,
+      "success_hits": 5.0,
+      "total_latency": 43.169999999999995
+    }
+  },
+  "results": [
+    {
+      "id": "create_01",
+      "category": "task_creation",
+      "prompt": "Create a task to buy groceries tomorrow",
+      "status": "success",
+      "provider": "nvidia",
+      "tools_used": [
+        "create_task"
+      ],
+      "expected_tools": [
+        "create_task"
+      ],
+      "tool_accuracy": 1.0,
+      "task_success": 1.0,
+      "latency": 5.52,
+      "output_preview": "\u2705 **Task created successfully!**  **Task Details:** - **Title:** Buy groceries - **ID:** `10573dae-9"
+    },
+    {
+      "id": "create_02",
+      "category": "task_creation",
+      "prompt": "Add a high priority task to prepare the Q4 financial report",
+      "status": "success",
+      "provider": "nvidia",
+      "tools_used": [
+        "create_task"
+      ],
+      "expected_tools": [
+        "create_task"
+      ],
+      "tool_accuracy": 1.0,
+      "task_success": 1.0,
+      "latency": 7.29,
+      "output_preview": "\u2705 **Task created successfully!**  **Task Details:** - **ID:** `02e5bb17-53c2-4579-b431-d53533fa9921`"
+    },
+    {
+      "id": "create_03",
+      "category": "task_creation",
+      "prompt": "Create a task to fix database connection bug by tomorrow morning",
+      "status": "success",
+      "provider": "nvidia",
+      "tools_used": [
+        "create_task"
+      ],
+      "expected_tools": [
+        "create_task"
+      ],
+      "tool_accuracy": 1.0,
+      "task_success": 1.0,
+      "latency": 14.73,
+      "output_preview": "\u2705 **Task Created Successfully!**  **Task Details:** - **Title:** Fix database connection bug - **Tas"
+    },
+    {
+      "id": "create_04",
+      "category": "task_creation",
+      "prompt": "Schedule a task to review pull request 42 tonight with tags code, review",
+      "status": "success",
+      "provider": "nvidia",
+      "tools_used": [
+        "create_task"
+      ],
+      "expected_tools": [
+        "create_task"
+      ],
+      "tool_accuracy": 1.0,
+      "task_success": 1.0,
+      "latency": 9.19,
+      "output_preview": "\u2705 Task created successfully!  **Task Details:** - **Title:** Review pull request 42 - **ID:** `05dc8"
+    },
+    {
+      "id": "create_05",
+      "category": "task_creation",
+      "prompt": "Create an urgent task to respond to customer escalation",
+      "status": "success",
+      "provider": "nvidia",
+      "tools_used": [
+        "create_task"
+      ],
+      "expected_tools": [
+        "create_task"
+      ],
+      "tool_accuracy": 1.0,
+      "task_success": 1.0,
+      "latency": 6.44,
+      "output_preview": "\u2705 **Urgent task created successfully!**  **Task Details:** - **ID:** `42a1c7b5-7ca4-4065-be3a-fe39f1"
+    }
+  ]
+}

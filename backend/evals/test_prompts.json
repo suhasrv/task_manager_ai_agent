@@ -1,0 +1,282 @@
+[
+  {
+    "id": "create_01",
+    "category": "task_creation",
+    "prompt": "Create a task to buy groceries tomorrow",
+    "expected_tools": ["create_task"],
+    "expected_args": {"title": "buy groceries", "due_date": "tomorrow"}
+  },
+  {
+    "id": "create_02",
+    "category": "task_creation",
+    "prompt": "Add a high priority task to prepare the Q4 financial report",
+    "expected_tools": ["create_task"],
+    "expected_args": {"priority": "high"}
+  },
+  {
+    "id": "create_03",
+    "category": "task_creation",
+    "prompt": "Create a task to fix database connection bug by tomorrow morning",
+    "expected_tools": ["create_task"],
+    "expected_args": {"due_date": "morning"}
+  },
+  {
+    "id": "create_04",
+    "category": "task_creation",
+    "prompt": "Schedule a task to review pull request 42 tonight with tags code, review",
+    "expected_tools": ["create_task"],
+    "expected_args": {"tags": ["code", "review"]}
+  },
+  {
+    "id": "create_05",
+    "category": "task_creation",
+    "prompt": "Create an urgent task to respond to customer escalation",
+    "expected_tools": ["create_task"],
+    "expected_args": {"priority": "urgent"}
+  },
+  {
+    "id": "create_06",
+    "category": "task_creation",
+    "prompt": "Add a task to write weekly status update with estimated hours 1.5",
+    "expected_tools": ["create_task"],
+    "expected_args": {"estimated_hours": 1.5}
+  },
+  {
+    "id": "create_07",
+    "category": "task_creation",
+    "prompt": "Create a low priority task to clean up old downloads folder",
+    "expected_tools": ["create_task"],
+    "expected_args": {"priority": "low"}
+  },
+  {
+    "id": "create_08",
+    "category": "task_creation",
+    "prompt": "Add a task titled Team Retrospective with description Discuss sprint 24 retro items",
+    "expected_tools": ["create_task"],
+    "expected_args": {"title": "Team Retrospective"}
+  },
+  {
+    "id": "create_09",
+    "category": "task_creation",
+    "prompt": "Create a task to submit expense report by today evening",
+    "expected_tools": ["create_task"],
+    "expected_args": {"due_date": "evening"}
+  },
+  {
+    "id": "create_10",
+    "category": "task_creation",
+    "prompt": "Add a task to call dentist tomorrow at 10am with tag health",
+    "expected_tools": ["create_task"],
+    "expected_args": {"tags": ["health"]}
+  },
+  {
+    "id": "search_01",
+    "category": "search_and_retrieval",
+    "prompt": "Find all tasks related to database optimization",
+    "expected_tools": ["search_tasks"],
+    "expected_args": {"query": "database"}
+  },
+  {
+    "id": "search_02",
+    "category": "search_and_retrieval",
+    "prompt": "Search for tasks about code review",
+    "expected_tools": ["search_tasks"],
+    "expected_args": {"query": "code review"}
+  },
+  {
+    "id": "search_03",
+    "category": "search_and_retrieval",
+    "prompt": "Show me tasks mentioning financial report",
+    "expected_tools": ["search_tasks"],
+    "expected_args": {"query": "financial report"}
+  },
+  {
+    "id": "search_04",
+    "category": "search_and_retrieval",
+    "prompt": "Search for customer escalation tasks",
+    "expected_tools": ["search_tasks"],
+    "expected_args": {"query": "customer escalation"}
+  },
+  {
+    "id": "search_05",
+    "category": "search_and_retrieval",
+    "prompt": "List all high priority tasks",
+    "expected_tools": ["list_tasks"],
+    "expected_args": {"priority": "high"}
+  },
+  {
+    "id": "search_06",
+    "category": "search_and_retrieval",
+    "prompt": "Show me all pending tasks",
+    "expected_tools": ["list_tasks"],
+    "expected_args": {"status": "pending"}
+  },
+  {
+    "id": "search_07",
+    "category": "search_and_retrieval",
+    "prompt": "Display all urgent tasks",
+    "expected_tools": ["list_tasks"],
+    "expected_args": {"priority": "urgent"}
+  },
+  {
+    "id": "search_08",
+    "category": "search_and_retrieval",
+    "prompt": "Get all completed tasks",
+    "expected_tools": ["list_tasks"],
+    "expected_args": {"status": "completed"}
+  },
+  {
+    "id": "reschedule_01",
+    "category": "reschedule_and_edits",
+    "prompt": "Reschedule task 12345678-1234-1234-1234-123456789abc to tomorrow at 5pm",
+    "expected_tools": ["reschedule_task"],
+    "expected_args": {"task_id": "12345678-1234-1234-1234-123456789abc", "new_due_date": "tomorrow"}
+  },
+  {
+    "id": "reschedule_02",
+    "category": "reschedule_and_edits",
+    "prompt": "Postpone the team retrospective task to next Monday at 9am",
+    "expected_tools": ["reschedule_task"],
+    "expected_args": {"new_due_date": "monday"}
+  },
+  {
+    "id": "reschedule_03",
+    "category": "reschedule_and_edits",
+    "prompt": "Move the due date of task 11111111-2222-3333-4444-555555555555 to tonight at 8pm",
+    "expected_tools": ["reschedule_task"],
+    "expected_args": {"task_id": "11111111-2222-3333-4444-555555555555"}
+  },
+  {
+    "id": "reschedule_04",
+    "category": "reschedule_and_edits",
+    "prompt": "Delay task aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee by 2 days",
+    "expected_tools": ["reschedule_task"],
+    "expected_args": {"task_id": "aaaaaaaa-bbbb-cccc-dddd-eeeeeeeeeeee"}
+  },
+  {
+    "id": "reschedule_05",
+    "category": "reschedule_and_edits",
+    "prompt": "Change deadline of task ffffffff-1111-2222-3333-444444444444 to tomorrow morning",
+    "expected_tools": ["reschedule_task"],
+    "expected_args": {"task_id": "ffffffff-1111-2222-3333-444444444444"}
+  },
+  {
+    "id": "reschedule_06",
+    "category": "reschedule_and_edits",
+    "prompt": "Update task 12345678-1234-1234-1234-123456789abc status to in_progress",
+    "expected_tools": ["update_task"],
+    "expected_args": {"status": "in_progress"}
+  },
+  {
+    "id": "reschedule_07",
+    "category": "reschedule_and_edits",
+    "prompt": "Mark task 12345678-1234-1234-1234-123456789abc as completed",
+    "expected_tools": ["update_task"],
+    "expected_args": {"status": "completed"}
+  },
+  {
+    "id": "reschedule_08",
+    "category": "reschedule_and_edits",
+    "prompt": "Update the priority of task 12345678-1234-1234-1234-123456789abc to urgent",
+    "expected_tools": ["update_task"],
+    "expected_args": {"priority": "urgent"}
+  },
+  {
+    "id": "calendar_01",
+    "category": "calendar_lookup",
+    "prompt": "Check my schedule for today",
+    "expected_tools": ["calendar_lookup"],
+    "expected_args": {"start_date": "today"}
+  },
+  {
+    "id": "calendar_02",
+    "category": "calendar_lookup",
+    "prompt": "What is on my calendar for tomorrow?",
+    "expected_tools": ["calendar_lookup"],
+    "expected_args": {"start_date": "tomorrow"}
+  },
+  {
+    "id": "calendar_03",
+    "category": "calendar_lookup",
+    "prompt": "Do I have any tasks or deadlines this week?",
+    "expected_tools": ["calendar_lookup"],
+    "expected_args": {"start_date": "week"}
+  },
+  {
+    "id": "calendar_04",
+    "category": "calendar_lookup",
+    "prompt": "Check calendar for next Monday",
+    "expected_tools": ["calendar_lookup"],
+    "expected_args": {"start_date": "monday"}
+  },
+  {
+    "id": "calendar_05",
+    "category": "calendar_lookup",
+    "prompt": "Look up my schedule for 2026-11-25",
+    "expected_tools": ["calendar_lookup"],
+    "expected_args": {"start_date": "2026-11-25"}
+  },
+  {
+    "id": "calendar_06",
+    "category": "calendar_lookup",
+    "prompt": "What deadlines do I have coming up today?",
+    "expected_tools": ["calendar_lookup"],
+    "expected_args": {"start_date": "today"}
+  },
+  {
+    "id": "calendar_07",
+    "category": "calendar_lookup",
+    "prompt": "Check if I have any scheduled events or tasks tomorrow morning",
+    "expected_tools": ["calendar_lookup"],
+    "expected_args": {"start_date": "tomorrow"}
+  },
+  {
+    "id": "calendar_08",
+    "category": "calendar_lookup",
+    "prompt": "Show me my calendar overview for this week",
+    "expected_tools": ["calendar_lookup"],
+    "expected_args": {"start_date": "week"}
+  },
+  {
+    "id": "multi_01",
+    "category": "multi_step_and_utility",
+    "prompt": "Create a reminder for task 12345678-1234-1234-1234-123456789abc in 1 hour",
+    "expected_tools": ["create_reminder"],
+    "expected_args": {"task_id": "12345678-1234-1234-1234-123456789abc"}
+  },
+  {
+    "id": "multi_02",
+    "category": "multi_step_and_utility",
+    "prompt": "List reminders for task 12345678-1234-1234-1234-123456789abc",
+    "expected_tools": ["list_reminders"],
+    "expected_args": {"task_id": "12345678-1234-1234-1234-123456789abc"}
+  },
+  {
+    "id": "multi_03",
+    "category": "multi_step_and_utility",
+    "prompt": "Delete task 12345678-1234-1234-1234-123456789abc",
+    "expected_tools": ["delete_task"],
+    "expected_args": {"task_id": "12345678-1234-1234-1234-123456789abc"}
+  },
+  {
+    "id": "multi_04",
+    "category": "multi_step_and_utility",
+    "prompt": "Get full details for task 12345678-1234-1234-1234-123456789abc",
+    "expected_tools": ["get_task"],
+    "expected_args": {"task_id": "12345678-1234-1234-1234-123456789abc"}
+  },
+  {
+    "id": "multi_05",
+    "category": "multi_step_and_utility",
+    "prompt": "List urgent tasks that are currently pending",
+    "expected_tools": ["list_tasks"],
+    "expected_args": {"priority": "urgent"}
+  },
+  {
+    "id": "multi_06",
+    "category": "multi_step_and_utility",
+    "prompt": "Give me a summary of my current tasks and workload",
+    "expected_tools": ["list_tasks", "calendar_lookup"],
+    "expected_args": {}
+  }
+]

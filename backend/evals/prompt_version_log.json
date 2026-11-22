@@ -1,0 +1,20 @@
+[
+  {
+    "version": "v1.0.0",
+    "timestamp": "2026-11-22T12:00:00",
+    "tool_call_accuracy": 72.5,
+    "task_success_rate": 77.5,
+    "avg_latency": 4.12,
+    "sample_size": 40,
+    "description": "Baseline prompt from original LangChain implementation"
+  },
+  {
+    "version": "v2.0.0",
+    "timestamp": "2026-11-22T18:52:21.695535",
+    "tool_call_accuracy": 100.0,
+    "task_success_rate": 100.0,
+    "avg_latency": 8.63,
+    "sample_size": 5,
+    "description": "Optimized prompt for LangGraph, structured tool-calling, calendar lookup, and rescheduling"
+  }
+]

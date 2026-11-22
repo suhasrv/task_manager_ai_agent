@@ -1,0 +1,85 @@
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile.backend
+    container_name: task_manager_backend
+    image: suhasvr/task_manager_agent:backend-latest
+    ports:
+      - "8000:8000"
+    networks:
+      - task_manager_network
+    environment:
+      # API Configuration
+      - API_TITLE=Task Manager Agent API
+      - API_VERSION=1.0.0
+      - DEBUG=false
+      
+      # LLM Configuration (set these in .env or override)
+      - GOOGLE_GEMINI_API_KEY=${GOOGLE_GEMINI_API_KEY:-}
+      - OPENAI_API_KEY=${OPENAI_API_KEY:-}
+      - ANTHROPIC_API_KEY=${ANTHROPIC_API_KEY:-}
+      - LLM_MODEL=${LLM_MODEL:-gemini-2.5-flash}
+      - LLM_TEMPERATURE=${LLM_TEMPERATURE:-0.7}
+      - LLM_PROVIDER=${LLM_PROVIDER:-gemini}
+      
+      # Database Configuration
+      - SUPABASE_URL=${SUPABASE_URL:-}
+      - SUPABASE_API_KEY=${SUPABASE_API_KEY:-}
+      - SUPABASE_DB_NAME=${SUPABASE_DB_NAME:-task_manager}
+      
+      # ChromaDB Configuration
+      - CHROMADB_PERSIST_DIR=/app/chroma_data
+      - CHROMADB_COLLECTION_NAME=task_embeddings
+      
+      # Scheduler Configuration
+      - SCHEDULER_ENABLED=${SCHEDULER_ENABLED:-true}
+      - REMINDER_CHECK_INTERVAL_MINUTES=${REMINDER_CHECK_INTERVAL_MINUTES:-5}
+      
+      # Logging
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      
+      # Frontend API URL (for CORS)
+      - API_URL=http://localhost:8000/api/v1
+    volumes:
+      - chroma_data:/app/chroma_data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://localhost:8000/api/v1/health', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    container_name: task_manager_frontend
+    image: suhasvr/task_manager_agent:frontend-latest
+    ports:
+      - "8501:8501"
+    environment:
+      # Backend API URL (use service name in docker-compose)
+      - API_URL=http://backend:8000/api/v1
+    depends_on:
+      backend:
+        condition: service_healthy
+    networks:
+      - task_manager_network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import httpx; httpx.get('http://localhost:8501/_stcore/health', timeout=5)"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+networks:
+  task_manager_network:
+    driver: bridge
+
+volumes:
+  chroma_data:
+    driver: local
+
