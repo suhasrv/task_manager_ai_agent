@@ -193,11 +193,11 @@ class CreateTaskInput(BaseModel):
 
 ---
 
-## 🎨 Frontend Architecture & `ui-ux-pro-max` Design System
+## 🎨 Frontend Architecture & Design System
 
-The application frontend is built using **Pure Python Streamlit** implementing the **Single-Router Architectural Pattern** and adhering to the **`ui-ux-pro-max`** design tokens:
+The application frontend is built using **Pure Python Streamlit** implementing the **Single-Router Architectural Pattern** :
 
-### Design Tokens & Aesthetics
+### Design & Aesthetics
 - **Color Space**: Modern Dark Slate (`#0A0F1D`), Frosted Glass surfaces `rgba(17, 24, 39, 0.75)`, Teal Glow (`#0D9488` / `#14B8A6`), Action Orange (`#EA580C`).
 - **Typography Pairing**: **Plus Jakarta Sans** (headings) + **Inter** (body) + **JetBrains Mono** (task IDs, tool badges).
 - **Glassmorphism**: `backdrop-filter: blur(16px)` with high-contrast `#FFFFFF` text rendering.
@@ -301,30 +301,6 @@ tests/test_search.py::test_search_endpoint PASSED                        [ 51%]
 ...
 ======================== 29 passed in 98s (100% Success) ========================
 ```
-
----
-
-## 💼 Career Impact & Interview Talking Points for AI & DS Roles
-
-> [!TIP]
-> **Use these talking points directly on your Resume, Portfolio, and Technical Interviews!**
-
-### 1. Resume Bullet Points
-- *"Architected and deployed an autonomous task orchestration engine using **LangGraph StateGraph**, achieving a **100% tool-calling accuracy** across a 40-prompt benchmark suite."*
-- *"Engineered an Information Retrieval pipeline utilizing **ChromaDB vector embeddings (384-dim all-MiniLM-L6-v2)** and **Cosine Distance Similarity** to enable natural language semantic search across enterprise tasks."*
-- *"Implemented a **4-tier dynamic LLM failover architecture** (NVIDIA NIM $\to$ Gemini $\to$ OpenAI $\to$ Claude) with Pydantic v2 validation and exponential backoff retry loops, achieving zero-error schema compliance."*
-- *"Developed an empirical LLMOps evaluation framework comparing baseline LangChain agents vs. StateGraph workflows, demonstrating a **+27.5% improvement in tool routing precision**."*
-
-### 2. High-Yield Interview Q&A Cheatsheet
-
-#### Q1: "Why did you choose LangGraph over traditional linear LangChain chains?"
-> *"Traditional LangChain chains or monolithic agents operate in linear loops where error recovery is difficult. With LangGraph, I modeled the agent as a compiled Directed Cyclic Graph (`StateGraph`). This allowed me to treat tool calling as an explicit state machine node with conditional edge routing, cyclical retry loops, deterministic input validation via Pydantic v2, and clean error-fallback states."*
-
-#### Q2: "How does the vector search work, and why not just use SQL full-text search?"
-> *"SQL full-text search relies on lexical pattern matching (BM25 or trigrams), which fails when a user uses synonyms or conceptual queries (e.g., searching for 'database latency' when the task is titled 'Optimize SQL query execution plan'). By generating continuous 384-dimensional dense embeddings with `all-MiniLM-L6-v2` and storing them in ChromaDB, we calculate cosine distance: $1 - \frac{\vec{u} \cdot \vec{v}}{\|\vec{u}\|_2 \|\vec{v}\|_2}$. This maps semantic concepts into neighboring vector regions, ensuring true conceptual retrieval."*
-
-#### Q3: "How did you measure and validate your agent's performance?"
-> *"I built a dedicated 40-prompt benchmark evaluation suite categorizing tasks into calendar lookups, task creation, natural language rescheduling, semantic search, and strategic prioritization. I tracked Tool-Call Accuracy, Task Success Rate, and Latency. Upgrading from the v1.0.0 baseline to the v2.0.0 LangGraph StateGraph improved Tool Accuracy from 72.5% to 100% and completely eliminated parameter type coercion errors."*
 
 ---
 
