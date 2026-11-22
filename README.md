@@ -357,6 +357,45 @@ task_manager_agent/
 
 ---
 
+---
+
+<div align="center">
+
+## Result
+
+<img src="results/Capture.PNG" alt="Result - Dashboard & Executive KPIs" width="900"/>
+<br/><br/>
+
+<img src="results/Capture1.PNG" alt="Result - Sprint Velocity & Task Board" width="900"/>
+<br/><br/>
+
+<img src="results/Capture2.PNG" alt="Result - Kanban Column View" width="900"/>
+<br/><br/>
+
+<img src="results/Capture3.PNG" alt="Result - Multi-Select & Batch Deletion" width="900"/>
+<br/><br/>
+
+<img src="results/Capture4.PNG" alt="Result - Schedule & Overdue Alerts" width="900"/>
+<br/><br/>
+
+<img src="results/Capture5.PNG" alt="Result - AI Agent Studio & Telemetry" width="900"/>
+<br/><br/>
+
+<img src="results/Capture6.PNG" alt="Result - Interactive Prompt Playbook" width="900"/>
+<br/><br/>
+
+<img src="results/Capture7.PNG" alt="Result - Create Task & Live Preview" width="900"/>
+<br/><br/>
+
+<img src="results/Capture8.PNG" alt="Result - Semantic Vector Search" width="900"/>
+<br/><br/>
+
+<img src="results/Capture9.PNG" alt="Result - Workspace Settings & Telemetry" width="900"/>
+
+</div>
+
+---
+
 <div align="center">
 
 **Developed by an Artificial Intelligence & Data Science Engineer**  
