@@ -13,7 +13,7 @@
 
 **An enterprise-grade, autonomous task intelligence system engineered at the intersection of Agentic AI, Information Retrieval (Vector Search), and Production ML Systems.**
 
-[Key AI/DS Capabilities](#-key-artificial-intelligence--data-science-highlights) • [Architecture](#-system-architecture--agentic-graph) • [Vector Retrieval](#-information-retrieval--vector-embeddings-math) • [LLMOps & Evals](#-llm-evaluation-benchmarking--prompt-engineering) • [Job Interview Talking Points](#-career-impact--interview-talking-points-for-ai--ds-roles)
+[Key AI/DS Capabilities](#-key-artificial-intelligence--data-science-highlights) • [Architecture](#-system-architecture--agentic-graph) • [Vector Retrieval](#-information-retrieval--vector-embeddings-math) • [LLMOps & Evals](#-llm-evaluation-benchmarking--prompt-engineering) • [Job Interview Talking Points](#-career-impact--interview-talking-points-for-ai--ds-roles) • [🛠️ Setup Guide](HOW_TO_SETUP.md)
 
 </div>
 
